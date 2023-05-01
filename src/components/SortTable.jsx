@@ -5,16 +5,18 @@ export default function SortTable(props) {
     <div>
       <h2>Sort Table</h2>
       <table>
-        <tr>
-          <th>Date</th>
-          <th>Amount</th>
-        </tr>
-        {props.list.map(item => (
+        <tbody>
           <tr>
-              <td>{item.date}</td>
-              <td>{item.amount}</td>
+            <th>Date</th>
+            <th>Amount</th>
           </tr>
-        ))}
+          {props.list.map((item, index) => (
+            <tr key={index}>
+                <td>{item.date}</td>
+                <td>{item.amount}</td>
+            </tr>
+          ))}
+        </tbody>        
       </table>
     </div>
   );
